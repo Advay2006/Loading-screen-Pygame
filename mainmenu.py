@@ -187,7 +187,13 @@ def main_menu():
         MENU_MOUSE_POS = pygame.mouse.get_pos()
 
         MENU_TEXT = getanother_font(100).render("Space Jam", True, "#a1320d")
-        MENU_RECT = MENU_TEXT.get_rect(center=(640, 160))
+        MENU_RECT = MENU_TEXT.get_rect(center=(640, 193))
+
+        MENU_TEXT2 = getanother_font(102).render("Space", True, "#d6d6d4")
+        MENU_RECT2 = MENU_TEXT.get_rect(center=(631, 193))
+
+        MENU_TEXT3 = getanother_font(102).render("Jam", True, "#d6d6d4")
+        MENU_RECT3 = MENU_TEXT.get_rect(center=(1023, 193))
 
         PLAY_BUTTON = Button(image=pygame.image.load("assets/Play Rect.png"), pos=(640, 350), 
                             text_input="PLAY", font=get_font(75), base_color="#d7fcd4", hovering_color="#19ff9f")
@@ -196,7 +202,10 @@ def main_menu():
         QUIT_BUTTON = Button(image=pygame.image.load("assets/Play Rectn.png"), pos=(640, 580), 
                             text_input="QUIT", font=get_font(35), base_color="#d7fcd4", hovering_color="#19ff9f")
 
+        screen.blit(MENU_TEXT2, MENU_RECT2)
+        screen.blit(MENU_TEXT3, MENU_RECT3)
         screen.blit(MENU_TEXT, MENU_RECT)
+
 
         for button in [PLAY_BUTTON, OPTIONS_BUTTON, QUIT_BUTTON]:
             button.changeColor(MENU_MOUSE_POS)
